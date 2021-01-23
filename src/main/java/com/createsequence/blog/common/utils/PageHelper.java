@@ -51,22 +51,22 @@ public class PageHelper<T> extends Page<T> implements IPage<T> {
 		/**
 		 * 总条数
 		 */
-		private long totalCount;
+		long totalCount;
 		
 		/**
 		 * 每页条数
 		 */
-		private long pageSize;
+		long pageSize;
 		
 		/**
 		 * 总页数
 		 */
-		private long totalPage;
+		long totalPage;
 		
 		/**
 		 * 当前页数
 		 */
-		private long pageNum;
+		long pageNum;
 		
 		/**
 		 * 数据

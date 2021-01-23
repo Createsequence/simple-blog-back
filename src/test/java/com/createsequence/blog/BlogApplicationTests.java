@@ -3,8 +3,8 @@ package com.createsequence.blog;
 import com.createsequence.blog.domain.BlogArticleEntity;
 import com.createsequence.blog.mapper.BlogCategoryMapper;
 import com.createsequence.blog.service.BlogArticleService;
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,24 +22,33 @@ class BlogApplicationTests {
 	@Autowired
 	BlogArticleService blogArticleService;
 	
+	public static Integer count;
+	
+	public static BlogArticleEntity entity = new BlogArticleEntity()
+			.setAuthor("test")
+			.setTitle("嘻嘻嘻")
+			.setContent("这里是内容")
+			.setExcerpt("这里是摘要");
+	
+	@Test
+	void count() {
+		count = blogArticleService.selectCount(null);
+		Assertions.assertNotNull(count);
+	}
+	
 	@Test
 	void insert() {
-		BlogArticleEntity entity = new BlogArticleEntity()
-				.setAuthor("test")
-				.setTitle("嘻嘻嘻")
-				.setContent("这里是内容")
-				.setExcerpt("这里是摘要");
-		blogArticleService.insert(entity);
+		Assertions.assertEquals(1, blogArticleService.insert(entity));
 	}
 	
 	@Test
 	void delete() {
-		Assert.assertEquals(blogArticleService.deleteById(1349647930178506754L), 1);
+		Assertions.assertEquals(1, blogArticleService.deleteById(entity.getId()));
 	}
 	
 	@Test
 	void select() {
 		List<BlogArticleEntity> list = blogArticleService.selectList(null);
-		Assert.assertEquals(list.size(), 0);
+		Assertions.assertEquals(count, list.size());
 	}
 }

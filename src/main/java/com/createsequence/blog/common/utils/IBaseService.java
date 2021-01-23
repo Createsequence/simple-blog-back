@@ -69,7 +69,7 @@ public interface IBaseService<T extends BaseEntity> {
 	/**
 	 * 查询全部数据
 	 *
-	 * @param map字段参数
+	 * @param map 字段参数
 	 * @return java.util.List<T>
 	 * @author Created by Createsequence on 2021/1/14 17:08
 	 */

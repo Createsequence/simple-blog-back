@@ -1,6 +1,6 @@
 package com.createsequence.blog.common.utils;
 
-import cn.hutool.http.HttpStatus;
+import com.createsequence.blog.common.constant.BlogConstant;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,12 +19,12 @@ public class Result {
 	/**
 	 * 响应码
 	 */
-	private int code;
+	int code;
 	
 	/**
 	 * 信息
 	 */
-	private String msg;
+	String msg;
 	
 	/**
 	 * 数据
@@ -44,27 +44,27 @@ public class Result {
 	}
 	
 	public static Result ok() {
-		return new Result(HttpStatus.HTTP_OK, DEFAULT_SUCCESS_MSG);
+		return new Result(BlogConstant.HTTP_SUCCESS, DEFAULT_SUCCESS_MSG);
 	}
 	
 	public static Result ok(Map<String, Object> data) {
-		return new Result(HttpStatus.HTTP_OK, DEFAULT_SUCCESS_MSG, data);
+		return new Result(BlogConstant.HTTP_SUCCESS, DEFAULT_SUCCESS_MSG, data);
 	}
 	
 	public static Result ok(String msg) {
-		return new Result(HttpStatus.HTTP_OK, msg);
+		return new Result(BlogConstant.HTTP_SUCCESS, msg);
 	}
 	
 	public static Result error() {
-		return new Result(HttpStatus.HTTP_OK, DEFAULT_ERROR_MSG);
+		return new Result(BlogConstant.HTTP_SERVER_ERROR, DEFAULT_ERROR_MSG);
 	}
 	
 	public static Result error(Map<String, Object> data) {
-		return new Result(HttpStatus.HTTP_OK, DEFAULT_ERROR_MSG, data);
+		return new Result(BlogConstant.HTTP_SERVER_ERROR, DEFAULT_ERROR_MSG, data);
 	}
 	
 	public static Result error(String msg) {
-		return new Result(HttpStatus.HTTP_OK, msg);
+		return new Result(BlogConstant.HTTP_SERVER_ERROR, msg);
 	}
 	
 	/**
