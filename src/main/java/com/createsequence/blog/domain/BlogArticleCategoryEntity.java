@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 import com.createsequence.blog.common.utils.BaseEntity;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
@@ -17,6 +18,7 @@ import lombok.experimental.Accessors;
  * @date 2021-01-13 13:53:25
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 @Accessors(chain = true)
 @TableName("blog_article_category")

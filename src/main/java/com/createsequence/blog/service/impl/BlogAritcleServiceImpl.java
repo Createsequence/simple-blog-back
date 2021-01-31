@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @Author：huangchengxing
- * @Date：2021-01-14 14:51
- * @Description：<描述>
+ * 文章service
+ *
+ * @author Created by Createsequence on 2021/1/23 11:14
  */
 @Service
 public class BlogAritcleServiceImpl extends BaseService<BlogArticleEntity, BlogArticleMapper> implements BlogArticleService {
