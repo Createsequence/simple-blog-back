@@ -79,10 +79,10 @@ public interface IBaseService<T extends BaseEntity> {
 	 * 根据条件查询列表
 	 *
 	 * @param map 字段参数
-	 * @return com.createsequence.blog.common.utils.PageHelper<com.createsequence.blog.domain.BlogArticleEntity>
+	 * @return com.createsequence.blog.common.utils.PageHelper
 	 * @author Created by Createsequence on 2021/1/14 15:09
 	 */
-	PageHelper<Map<String, Object>> selectByPage(Map<String, Object> map);
+	PageHelper selectByPage(Map<String, Object> map);
 	
 	/**
 	 * 根据id查询对象

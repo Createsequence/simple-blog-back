@@ -82,8 +82,8 @@ public abstract class BaseService<T extends BaseEntity, E extends BaseMapper<T>>
 	}
 	
 	@Override
-	public PageHelper<Map<String, Object>> selectByPage(Map<String, Object> map) {
-		PageHelper<Map<String, Object>> pageHelper = new PageHelper<>(map);
+	public PageHelper selectByPage(Map<String, Object> map) {
+		PageHelper pageHelper = new PageHelper(map);
 		QueryWrapper<T> queryWrapper = new QueryWrapper<>();
 		getQueryCondition(map, queryWrapper);
 		return mapper().selectMapsPage(pageHelper, queryWrapper);

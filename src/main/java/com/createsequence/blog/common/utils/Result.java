@@ -1,6 +1,8 @@
 package com.createsequence.blog.common.utils;
 
 import com.createsequence.blog.common.constant.BlogConstant;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,11 +12,9 @@ import java.util.Map;
  *
  * @author Created by Createsequence on 2021/1/13 12:56
  */
+@Getter
+@Setter
 public class Result {
-	
-	public static final String DEFAULT_SUCCESS_MSG = "success";
-	
-	public static final String DEFAULT_ERROR_MSG = "error";
 	
 	/**
 	 * 响应码
@@ -44,11 +44,11 @@ public class Result {
 	}
 	
 	public static Result ok() {
-		return new Result(BlogConstant.HTTP_SUCCESS, DEFAULT_SUCCESS_MSG);
+		return new Result(BlogConstant.HTTP_SUCCESS, BlogConstant.DEFAULT_SUCCESS_MSG);
 	}
 	
 	public static Result ok(Map<String, Object> data) {
-		return new Result(BlogConstant.HTTP_SUCCESS, DEFAULT_SUCCESS_MSG, data);
+		return new Result(BlogConstant.HTTP_SUCCESS, BlogConstant.DEFAULT_SUCCESS_MSG, data);
 	}
 	
 	public static Result ok(String msg) {
@@ -56,11 +56,11 @@ public class Result {
 	}
 	
 	public static Result error() {
-		return new Result(BlogConstant.HTTP_SERVER_ERROR, DEFAULT_ERROR_MSG);
+		return new Result(BlogConstant.HTTP_SERVER_ERROR, BlogConstant.DEFAULT_ERROR_MSG);
 	}
 	
 	public static Result error(Map<String, Object> data) {
-		return new Result(BlogConstant.HTTP_SERVER_ERROR, DEFAULT_ERROR_MSG, data);
+		return new Result(BlogConstant.HTTP_SERVER_ERROR, BlogConstant.DEFAULT_ERROR_MSG, data);
 	}
 	
 	public static Result error(String msg) {

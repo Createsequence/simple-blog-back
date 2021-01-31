@@ -40,11 +40,13 @@ public class BlogConstant {
 	 * 请求成功
 	 */
 	public static final int HTTP_SUCCESS = 200;
+	public static final String DEFAULT_SUCCESS_MSG = "success";
 	
 	/**
 	 * 服务器错误
 	 */
 	public static final int HTTP_SERVER_ERROR = 500;
+	public static final String DEFAULT_ERROR_MSG = "error";
 	
 	/**
 	 * 找不到资源
